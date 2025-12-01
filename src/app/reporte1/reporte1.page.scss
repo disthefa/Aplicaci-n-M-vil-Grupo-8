@@ -1,0 +1,181 @@
+ion-toolbar {
+  display: flex;
+  align-items: center; /* centra verticalmente todos los elementos dentro del toolbar */
+  justify-content: space-between; /* separa los elementos de inicio y fin */
+  --padding-top: 40px;
+
+}
+
+.avatar{
+
+  height: 36px;
+}
+
+
+
+
+
+
+/* Alinea los grupos de botones */
+ion-buttons {
+  display: flex;
+  align-items: center; /* asegura que los íconos estén alineados en el eje vertical */
+}
+
+/* Ajusta los iconos del toolbar (clip, calendario, puntos, perfil) */
+
+
+.toolbar-btn {
+    margin: -0.9px; /* 👈 reduce separación horizontal */
+    margin-left: 1vw;
+  
+  transition: transform 0.2s ease;
+  &:active {
+    transform: scale(0.92);
+  }
+
+}
+
+.header-logo {
+  height: 60px;              /* Ajusta según tu diseño */
+  margin-left: -8px;
+  display: flex;
+  align-self: center;        /* 👈 Alinea verticalmente dentro del toolbar */
+  object-fit: contain;
+  vertical-align: middle;    /* 👈 Centra visualmente con los iconos */
+  position: relative;
+  top: -5.3px;                  /* 👈 Pequeño ajuste fino opcional */
+  transition: transform 0.3s ease;
+}
+
+.header-logo:hover {
+  transform: scale(1.05);
+}
+
+
+
+/* Fuente global */
+body, ion-content, ion-title, h1, h2, h3, h4, h5, h6, p {
+  font-family: 'Poppins', sans-serif;
+}
+
+.titulo-secundario h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 38px;
+  font-weight: 600;
+  color: #222;
+  margin: 0;
+  position: relative;
+  top: 7px;     /* 🔥 mueve hacia abajo */
+  left: 20px;   /* 🔥 mueve hacia la derecha */
+}
+
+
+.contenedor-chips {
+  display: flex;
+  justify-content: center; /* 🔥 centra horizontalmente */
+  align-items: center;     /* centra verticalmente si es necesario */
+  gap: 7px;                /* espacio entre chips */
+  margin-top: 20px;
+}
+
+ion-card {
+  margin: 16px;
+  box-shadow: none; // Elimina la sombra/borde
+  border: none; // Elimina borde explícito
+  --background: transparent; // Fondo transparente (opcional)
+}
+
+ion-card-header {
+  padding-bottom: 8px;
+  border-bottom: none; // Elimina línea inferior del header
+}
+
+ion-card-content {
+  border-top: none; // Elimina línea superior del content
+  padding: 0; // Elimina padding (opcional)
+}
+
+ion-card-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.chart-container {
+  position: relative;
+  height: 300px;
+  padding: 10px;
+}
+
+canvas {
+  max-height: 280px;
+}
+
+@media (max-width: 768px) {
+  .chart-container {
+    height: 250px;
+  }
+  
+  canvas {
+    max-height: 230px;
+  }
+}
+
+
+
+.title-with-line::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -5px; // Mueve la línea 10px a la izquierda del título
+  width: 230px; // Largo de la línea
+  height: 2px; // Grosor de la línea
+  background-color: #565555; // Color de la línea
+  bottom: -5px; // Ajusta la posición vertical de la línea
+}
+
+ion-card-title {
+  font-size: 24px;
+  font-weight: 100; // Cambia este valor para el grosor
+  
+  
+  // OPCIONES DE GROSOR (font-weight):
+  // font-weight: 300;  // Delgado (Light)
+  // font-weight: 400;  // Normal (Regular)
+  // font-weight: 500;  // Medio (Medium)
+  // font-weight: 600;  // Semi-negrita (Semi-Bold) - actual
+  // font-weight: 700;  // Negrita (Bold)
+  // font-weight: 800;  // Extra negrita (Extra Bold)
+  // font-weight: 900;  // Super negrita (Black)
+}
+
+.contenedor-botones2{
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* separación entre botones */
+  
+  background: #e8eefc; /* color similar al que muestras */
+  border-radius: 30px; /* bordes bien redondeados */
+  padding: 2px 10px; /* espacio interior */
+
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* sombra suave */
+
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+
+
+}
+
+.contenedor-chips2{
+
+  display: flex;
+  justify-content: center; /* 🔥 centra horizontalmente */
+  align-items: center;     /* centra verticalmente si es necesario */
+  gap: 7px;                /* espacio entre chips */
+  margin-top: 70px;
+  
+}

@@ -1,0 +1,47 @@
+.producto-detalle-alert {
+  .alert-message {
+    text-align: left !important;
+    white-space: pre-line;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333;
+  }
+  
+  .alert-sub-title {
+    color: #325298;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+}
+
+
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+
+.example-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.alerta-detalles .alert-message {
+  white-space: pre-wrap !important; /* Esto obliga a respetar los saltos de línea */
+  text-align: left !important;      /* Alinea el texto a la izquierda */
+  font-size: 14px;                  /* Tamaño de letra cómodo */
+  line-height: 1.6;                 /* Espacio entre líneas para que no se vea amontonado */
+  color: #444;                      /* Color gris oscuro para mejor lectura */
+}

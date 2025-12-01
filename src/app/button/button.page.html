@@ -1,0 +1,67 @@
+<ion-header class="ion-no-border">
+  
+  <ion-toolbar>
+    <img src="assets/icon/misky.png" alt="misky" class="mi-imagen-personalizada" />
+      
+    <ion-avatar>
+        <img src="assets/icon/login2.svg" (click)="aPerfil()" />
+      </ion-avatar>
+    
+  </ion-toolbar>
+
+  <ion-toolbar>
+    <ion-item class="custom-searchbar" lines="none">
+      
+      <ion-button 
+        slot="start" 
+        fill="clear" 
+        shape="round"
+        (click)="toggleRecentSearches($event)">
+        <ion-icon slot="icon-only" name="menu-outline"></ion-icon>
+      </ion-button>
+
+      <ion-input
+        [(ngModel)]="searchQuery"
+        placeholder="Buscar..."
+        (keyup.enter)="performSearch()"
+        (ionFocus)="isRecentVisible = true">
+      </ion-input>
+
+      <ion-button 
+        slot="end" 
+        fill="clear" 
+        shape="round"
+        (click)="performSearch()">
+        <ion-icon slot="icon-only" name="search-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-toolbar>
+
+  <ion-list *ngIf="isRecentVisible" class="recent-searches-list">
+    <ion-item 
+      *ngFor="let search of recentSearches" 
+      (click)="selectSearch(search)"
+      button
+      detail="false">
+      {{ search }}
+    </ion-item>
+    <ion-item lines="none" (click)="isRecentVisible = false" button class="close-item">
+      <small>Cerrar</small>
+    </ion-item>
+  </ion-list>
+
+</ion-header>
+
+
+<ion-content [fullscreen]="true" (click)="hideRecentSearches()">
+ 
+<div class="vertical-buttons">
+  <ion-button (click)="iraInventario()">Inventario</ion-button>
+  
+  <ion-button routerLink="/movimientos-miski">Movimientos</ion-button>
+  
+  <ion-button (click)="iraReporte()">Reportes</ion-button>
+  <ion-button (click)="aPerfil()">Perfil</ion-button>
+</div>
+
+

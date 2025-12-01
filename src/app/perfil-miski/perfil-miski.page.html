@@ -1,0 +1,112 @@
+<ion-header>
+  <ion-toolbar>
+    <!-- Flecha de regresar + Logo a la izquierda -->
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/button" text="" color="dark"></ion-back-button>
+      <img src="assets/icon/misky.png" alt="Logo MISKY" class="header-logo">
+    </ion-buttons>
+
+    <!-- Botones a la derecha con iconos SVG -->
+    <ion-buttons slot="end" class="contenedor-principal ">
+      <ion-button fill="clear" class="toolbar-btn">
+        <img src="assets/icon/Content.svg" alt="Adjuntar" class="toolbar-icon svg-24">
+      </ion-button>
+      <ion-button fill="clear" class="toolbar-btn">
+        <img src="assets/icon/Trailing action 2.svg" alt="Calendario" class="toolbar-icon svg-24">
+      </ion-button>
+      <ion-button fill="clear" class="toolbar-btn">
+        <img src="assets/icon/puntos3.svg" alt="Más opciones" class="toolbar-icon svg-18">
+      </ion-button>
+      <ion-button fill="clear" class="toolbar-btn" routerLink="/perfil-miski">
+        <img src="assets/icon/login2.svg" alt="Adjuntar" class="avatar">
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h1 class="page-title">Perfil</h1>
+
+  <!-- Avatar y datos del usuario con efecto hover -->
+  <div class="profile-section" (click)="verPerfil()">
+    <div class="avatar-container">
+      <ion-avatar class="profile-avatar">
+        <img src="https://ionicframework.com/docs/img/demos/avatar.svg" alt="Foto de perfil">
+      </ion-avatar>
+      <div class="avatar-edit-badge">
+        <ion-icon name="camera"></ion-icon>
+      </div>
+    </div>
+    
+    <div class="profile-info">
+      <h2 class="profile-name">Gianpier Leon</h2>
+      <p class="profile-role">Administrador</p>
+      <div class="profile-status">
+        <div class="status-dot"></div>
+        <span>Activo</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Estadísticas rápidas -->
+  <div class="stats-container">
+    <div class="stat-card">
+      <ion-icon name="calendar-outline"></ion-icon>
+      <div class="stat-info">
+        <span class="stat-value">127</span>
+        <span class="stat-label">Días activo</span>
+      </div>
+    </div>
+    <div class="stat-card">
+      <ion-icon name="notifications-outline"></ion-icon>
+      <div class="stat-info">
+        <span class="stat-value">3</span>
+        <span class="stat-label">Notificaciones</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lista de opciones con iconos y efectos -->
+  <ion-list lines="none" class="options-list">
+    <ion-item button detail="false" class="option-item" (click)="editarDatos()">
+      <div class="option-icon-wrapper">
+        <ion-icon name="person-outline" class="option-icon"></ion-icon>
+      </div>
+      <ion-label class="option-label">Editar datos personales</ion-label>
+      <ion-icon name="chevron-forward-outline" class="arrow-icon"></ion-icon>
+      <ion-ripple-effect></ion-ripple-effect>
+    </ion-item>
+
+    <ion-item button detail="false" class="option-item" (click)="cambiarPassword()">
+      <div class="option-icon-wrapper">
+        <ion-icon name="lock-closed-outline" class="option-icon"></ion-icon>
+      </div>
+      <ion-label class="option-label">Cambiar contraseña</ion-label>
+      <ion-icon name="chevron-forward-outline" class="arrow-icon"></ion-icon>
+      <ion-ripple-effect></ion-ripple-effect>
+    </ion-item>
+
+    <ion-item button detail="false" class="option-item" (click)="configurarNotificaciones()">
+      <div class="option-icon-wrapper">
+        <ion-icon name="notifications-outline" class="option-icon"></ion-icon>
+      </div>
+      <ion-label class="option-label">Activar notificaciones</ion-label>
+      <ion-toggle [(ngModel)]="notifEnabled" slot="end" class="notif-toggle"></ion-toggle>
+      <ion-ripple-effect></ion-ripple-effect>
+    </ion-item>
+
+    <ion-item button detail="false" class="option-item logout-item" (click)="logout()">
+  <div class="option-icon-wrapper logout-icon-wrapper">
+    <ion-icon name="log-out-outline" class="option-icon"></ion-icon>
+  </div>
+  <ion-label class="option-label logout-label">Cerrar Sesión</ion-label>
+  <ion-icon name="chevron-forward-outline" class="arrow-icon"></ion-icon>
+  <ion-ripple-effect></ion-ripple-effect>
+</ion-item>
+  </ion-list>
+
+  <!-- Versión de la app -->
+  <div class="app-version">
+    <p>Versión Grupo 8</p>
+  </div>
+</ion-content>
